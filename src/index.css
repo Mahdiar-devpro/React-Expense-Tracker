@@ -1,0 +1,405 @@
+:root {
+  /* رنگ‌های اصلی برند */
+  --color-primary-start: #752e94;
+  --color-primary-mid: #7c00b0;
+  --color-primary-end: #661d85;
+  --color-accent-start: #a900ff;
+  --color-accent-end: #f00068;
+
+  /* رنگ‌های وضعیت — هم‌خانواده با پالت اصلی، نه رنگ خام */
+  --color-income: #00d9a3;
+  --color-income-light: #6dffcf;
+  --color-expense: #ff2d6b;
+  --color-expense-light: #ff7a9c;
+  --color-balance: #8b5cf6;
+  --color-balance-light: #b794f6;
+
+  /* پس‌زمینه‌ها — با تینت بنفش به‌جای خنثی مطلق */
+  --bg-card-dark: #2a1b47;
+  --bg-card-light: rgba(169, 0, 255, 0.3);
+
+  /* متن — با کمی گرمای بنفش به‌جای خاکستری خام */
+  --text-light: #ffffff;
+  --text-muted: #c9b8e0;
+  --text-dark: #3d2a52;
+  --text-subtle: #b8a8d0;
+
+  /* شعاع گوشه‌ها */
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.5rem;
+
+  /* سایه با تینت بنفش به‌جای مشکی خام */
+  --shadow-default: 0 4px 10px rgba(76, 0, 130, 0.35);
+
+  --font-main:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+body {
+  background: #a900ff;
+  background: linear-gradient(
+    98deg,
+    rgba(169, 0, 255, 1) 0%,
+    rgba(240, 0, 104, 1) 100%
+  );
+}
+ul li {
+  list-style: none;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.summary-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  width: min(924px, 92%);
+}
+.summary-items li {
+  padding: 1rem 2rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  box-shadow: var(--shadow-default);
+}
+.summary-items li:nth-child(1) {
+  background: #00d9a3;
+  background: linear-gradient(
+    98deg,
+    rgba(0, 217, 163, 1) 0%,
+    rgba(109, 255, 207, 1) 100%
+  );
+}
+.summary-items li:nth-child(2) {
+  background: #ff2d6b;
+  background: linear-gradient(
+    98deg,
+    rgba(255, 45, 107, 1) 0%,
+    rgba(255, 122, 156, 1) 100%
+  );
+}
+.summary-items li:nth-child(3) {
+  background: #8b5cf6;
+  background: linear-gradient(
+    98deg,
+    rgba(139, 92, 246, 1) 0%,
+    rgba(183, 148, 246, 1) 100%
+  );
+}
+.summary-titles p {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+.summary-titles h3 {
+  font-size: 1.7rem;
+  margin-top: 0.3rem;
+}
+.summary-items li i {
+  font-size: 1.7rem;
+  background-color: #fff;
+  padding: 0.6rem;
+  border-radius: var(--radius-md);
+}
+.summary-items li:nth-child(1) i {
+  color: var(--color-income);
+}
+.summary-items li:nth-child(2) i {
+  color: var(--color-expense);
+}
+.summary-items li:nth-child(3) i {
+  color: var(--color-balance);
+}
+.expense-details {
+  width: min(1100px, 92%);
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  gap: 4rem;
+}
+/* add expenses items */
+.expense-details > div {
+  flex: 1;
+}
+.entry-form {
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-card-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+.add-new-entry {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+.add-new-entry i {
+  background: #a900ff;
+  background: linear-gradient(
+    98deg,
+    rgba(169, 0, 255, 1) 0%,
+    rgba(240, 0, 104, 1) 100%
+  );
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: var(--radius-md);
+}
+.add-new-entry h1 {
+  font-size: 1.5rem;
+}
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.expense-form li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.expense-form li .empty-input {
+  outline: 2px solid red;
+  background-color: #ffb5b5;
+}
+.expense-form li label {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color: var(--text-subtle);
+}
+.entry-type div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.entry-type div button {
+  flex: 1;
+  padding: 0.7rem 0;
+  border-radius: var(--radius-sm);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: #fff;
+}
+.entry-type div button:nth-child(1).active {
+  outline: 2px solid red;
+  background-color: var(--color-expense-light);
+  color: red;
+}
+.entry-type div button:nth-child(2).active {
+  outline: 2px solid green;
+  background-color: var(--color-income-light);
+  color: green;
+}
+.expense-form li input,
+.expense-form li select {
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+}
+.amount div {
+  position: relative;
+}
+.amount div input {
+  z-index: 1;
+  padding-left: 2rem;
+}
+.amount div i {
+  position: absolute;
+  z-index: 100;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+.expense-form li span {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: red;
+  text-transform: uppercase;
+  display: none;
+}
+.expense-form li span.error-active {
+  display: block;
+}
+.submit {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  outline: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #a900ff, #f00068);
+  color: #fff;
+}
+/* filter area */
+.filter-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0;
+}
+/* filter buttons styles */
+.filter-buttons {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  width: 100%;
+  background: var(--bg-card-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+.filter-buttons button {
+  flex: 1;
+  padding: 0.7rem 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: #b8b0c8;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.filter-buttons button.active {
+  color: var(--text-dark);
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+/* Transaction List */
+.transaction-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.transaction-list li {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--bg-card-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-lg);
+}
+.left-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  flex: 2;
+}
+.left-list > i.income {
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #57ff76, #02b985);
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+}
+.left-list > i.expense {
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #ff5f57, #b90202);
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+}
+.left-list .entry-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.left-list .entry-title > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.left-list .entry-title h2 {
+  color: #fff;
+}
+.left-list .entry-title div div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+.right-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 1rem;
+}
+.right-list span {
+  font-size: 1.2rem;
+}
+.right-list span.income-price {
+  color: green;
+}
+.right-list span.expense-price {
+  color: red;
+}
+.right-list i {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.right-list i:nth-child(2) {
+  color: #aaa;
+}
+.right-list i:nth-child(3) {
+  color: rgb(255, 78, 78);
+}
+#no-entry {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (width < 1200px) {
+  .expense-details {
+    gap: 2rem;
+  }
+}
+@media (width < 1092px) {
+  .expense-details {
+    width: 495px;
+    flex-wrap: wrap;
+    padding-bottom: 1.5rem;
+  }
+}
