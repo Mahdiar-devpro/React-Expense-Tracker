@@ -1,12 +1,10 @@
 :root {
-  /* رنگ‌های اصلی برند */
   --color-primary-start: #752e94;
   --color-primary-mid: #7c00b0;
   --color-primary-end: #661d85;
   --color-accent-start: #a900ff;
   --color-accent-end: #f00068;
 
-  /* رنگ‌های وضعیت — هم‌خانواده با پالت اصلی، نه رنگ خام */
   --color-income: #00d9a3;
   --color-income-light: #6dffcf;
   --color-expense: #ff2d6b;
@@ -14,22 +12,18 @@
   --color-balance: #8b5cf6;
   --color-balance-light: #b794f6;
 
-  /* پس‌زمینه‌ها — با تینت بنفش به‌جای خنثی مطلق */
   --bg-card-dark: #2a1b47;
   --bg-card-light: rgba(169, 0, 255, 0.3);
 
-  /* متن — با کمی گرمای بنفش به‌جای خاکستری خام */
   --text-light: #ffffff;
   --text-muted: #c9b8e0;
   --text-dark: #3d2a52;
   --text-subtle: #b8a8d0;
 
-  /* شعاع گوشه‌ها */
   --radius-lg: 1.5rem;
   --radius-md: 1rem;
   --radius-sm: 0.5rem;
 
-  /* سایه با تینت بنفش به‌جای مشکی خام */
   --shadow-default: 0 4px 10px rgba(76, 0, 130, 0.35);
 
   --font-main:
