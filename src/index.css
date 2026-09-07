@@ -385,15 +385,239 @@ main {
   align-items: center;
   justify-content: center;
 }
-@media (width < 1200px) {
+/* ===== Responsive ===== */
+
+/* Large screens */
+@media (max-width: 1200px) {
   .expense-details {
     gap: 2rem;
   }
-}
-@media (width < 1092px) {
-  .expense-details {
-    width: 495px;
-    flex-wrap: wrap;
-    padding-bottom: 1.5rem;
+
+  .summary-items {
+    gap: 1rem;
+  }
+
+  .summary-items li {
+    flex: 1;
+    min-width: 0;
   }
 }
+
+/* Tablets / Small laptops */
+@media (max-width: 1024px) {
+  main {
+    padding: 0 1.5rem;
+  }
+
+  .summary-items {
+    width: 100%;
+    max-width: 900px;
+    gap: 1rem;
+  }
+
+  .summary-items li {
+    padding: 1rem 1.2rem;
+    gap: 1.5rem;
+  }
+
+  .expense-details {
+    width: 100%;
+    max-width: 900px;
+    gap: 1.5rem;
+  }
+
+  .expense-form {
+    gap: 0.8rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .summary-items {
+    flex-wrap: wrap;
+  }
+
+  .summary-items li {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+
+  .summary-items li:nth-child(3) {
+    flex: 1 1 100%;
+  }
+
+  .expense-details {
+    flex-direction: column;
+    max-width: 700px;
+  }
+
+  .expense-details > div {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  main {
+    padding: 0 0.75rem;
+  }
+
+  .summary-items {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding-top: 1rem;
+  }
+
+  .summary-items li,
+  .summary-items li:nth-child(3) {
+    width: 100%;
+    flex: none;
+    justify-content: space-between;
+    padding: 0.9rem 1rem;
+    gap: 1rem;
+  }
+
+  .summary-titles p {
+    font-size: 0.65rem;
+  }
+
+  .summary-titles h3 {
+    font-size: 1.3rem;
+  }
+
+  .summary-items li i {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+
+  .expense-details {
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .entry-form {
+    width: 100%;
+    padding: 1.2rem 1rem;
+  }
+
+  .add-new-entry h1 {
+    font-size: 1.25rem;
+  }
+
+  .entry-type div {
+    gap: 0.75rem;
+  }
+
+  .entry-type div button {
+    font-size: 0.85rem;
+    gap: 0.4rem;
+  }
+
+  .filter-buttons {
+    padding: 0.6rem;
+  }
+
+  .filter-buttons button {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.4rem;
+  }
+
+  .transaction-list {
+    gap: 0.75rem;
+  }
+
+  .transaction-list li {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .left-list {
+    width: 100%;
+    flex: none;
+    gap: 1rem;
+  }
+
+  .left-list > i.income,
+  .left-list > i.expense {
+    font-size: 1.2rem;
+    padding: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  .left-list .entry-title {
+    min-width: 0;
+  }
+
+  .left-list .entry-title h2 {
+    font-size: 1rem;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .left-list .entry-title > div {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+  }
+
+  .right-list {
+    width: 100%;
+    flex: none;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .right-list span {
+    font-size: 1rem;
+    margin-right: auto;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  main {
+    padding: 0 0.5rem;
+  }
+
+  .summary-items li {
+    padding: 0.8rem;
+  }
+
+  .summary-titles h3 {
+    font-size: 1.15rem;
+  }
+
+  .entry-form {
+    padding: 1rem 0.8rem;
+  }
+
+  .entry-type div {
+    gap: 0.5rem;
+  }
+
+  .entry-type div button {
+    font-size: 0.75rem;
+    padding: 0.65rem 0.25rem;
+  }
+
+  .filter-buttons button {
+    font-size: 0.75rem;
+  }
+
+  .transaction-list li {
+    padding: 0.8rem;
+  }
+
+  .left-list .entry-title h2 {
+    font-size: 0.9rem;
+  }
+
+  .right-list {
+    gap: 0.75rem;
+  }
+}
+
